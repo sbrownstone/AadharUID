@@ -65,6 +65,12 @@ public class ScanResultResponseAdapter {
         responses.putString("dobGuess", scanResult.dobGuess);
 
         String odkIntentData = responses.getString(odkIntentDataField);
+        String odkIntentdob = responses.getString("dob");
+        String odkIntentname = responses.getString("name");
+        String odkIntentgender=responses.getString("gender")
+        responseIntent.putExtra("odk_intent_data_dob", odkIntentdob);
+        responseIntent.putExtra("odk_intent_data_name", odkIntentname);
+        responseIntent.putExtra("odk_intent_data_gender", odkIntentgender);
         responseIntent.putExtra("odk_intent_bundle", responses);
         responseIntent.putExtra("odk_intent_data", odkIntentData);
         if (odkIntentData == null) {
